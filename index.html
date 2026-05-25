@@ -19,7 +19,6 @@
       color: #1f2e26;
     }
 
-    /* header & navigation */
     .site-header {
       background: white;
       box-shadow: 0 2px 12px rgba(0,0,0,0.03);
@@ -46,7 +45,16 @@
       gap: 20px;
     }
 
-    .logo h1 {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo img {
+      height: 48px;
+      width: auto;
+    }
+    .logo-text h1 {
       font-size: 1.7rem;
       font-weight: 800;
       background: linear-gradient(130deg, #236B3C, #C57F2E);
@@ -54,7 +62,7 @@
       -webkit-background-clip: text;
       color: transparent;
     }
-    .logo span {
+    .logo-text span {
       font-size: 0.7rem;
       display: block;
       color: #7c684a;
@@ -64,6 +72,7 @@
       display: flex;
       gap: 28px;
       flex-wrap: wrap;
+      align-items: center;
     }
     .nav-links button {
       background: none;
@@ -78,17 +87,16 @@
     .nav-links button:hover {
       color: #dd8833;
     }
-    .register-nav-btn {
+    .enroll-nav-btn {
       background: #236B3C;
       color: white !important;
       padding: 6px 20px;
       border-radius: 60px;
     }
-    .register-nav-btn:hover {
+    .enroll-nav-btn:hover {
       background: #aa5b1c;
     }
 
-    /* page container */
     .page {
       display: none;
       animation: fade 0.2s ease;
@@ -101,7 +109,6 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    /* reusable components */
     .section-padding {
       padding: 70px 0;
     }
@@ -149,6 +156,14 @@
       border: 1px solid #f0e2cf;
       flex: 1;
     }
+    .founder-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 60px;
+      margin-bottom: 16px;
+      border: 3px solid #e0c8a8;
+    }
     .subject-tags {
       display: flex;
       flex-wrap: wrap;
@@ -183,15 +198,18 @@
 <header class="site-header">
   <div class="container nav-wrapper">
     <div class="logo">
-      <h1>Best In Class</h1>
-      <span>Tutoring Services • 2026</span>
+      <img src="1.png" alt="Best In Class Logo" onerror="this.style.display='none'">
+      <div class="logo-text">
+        <h1>Best In Class</h1>
+        <span>Tutoring Services • 2026</span>
+      </div>
     </div>
     <div class="nav-links">
       <button data-page="home">Home</button>
       <button data-page="about">About</button>
       <button data-page="subjects">Subjects</button>
       <button data-page="fees">Fees</button>
-      <button data-page="register" class="register-nav-btn">Register Now</button>
+      <button data-page="register" class="enroll-nav-btn">Enroll</button>
     </div>
   </div>
 </header>
@@ -237,24 +255,25 @@
       <h2 class="page-title">About us</h2>
       <div class="grid-2">
         <div class="card">
-          <i class="fas fa-handshake" style="font-size: 2rem; color:#dd7e28;"></i>
-          <h3 style="margin: 16px 0 8px;">Thabo Chauke & Mlanga Mlangisto</h3>
-          <p>Founders of Best In Class Tutoring Services</p>
-          <p style="margin-top: 16px;">Their paths crossed at the University of Johannesburg, where a shared passion for education and community upliftment brought them together. While tutoring fellow students, they noticed a gap: many high school learners in Kagiso and surrounding areas lacked affordable, quality weekend support.</p>
+          <img src="2.png" alt="Thabo Chauke" class="founder-img" onerror="this.style.display='none'">
+          <h3 style="margin: 8px 0 4px;">Thabo Chauke</h3>
+          <p style="color:#dd7e28; font-weight: 500;">Co-founder</p>
+          <p>Thabo’s passion for mathematics and science drives the academic structure at Best In Class. He believes that every learner can excel with the right support.</p>
         </div>
         <div class="card">
-          <i class="fas fa-lightbulb" style="font-size: 2rem; color:#dd7e28;"></i>
-          <h3 style="margin: 16px 0 8px;">A vision born from need</h3>
-          <p>Thabo and Mlanga decided to turn their after‑hours help into a structured programme. They saw how a few hours of focused teaching every Saturday and Sunday could transform grades and confidence. In 2026, Best In Class was born – not as a business, but as a mission.</p>
+          <img src="3.png" alt="Mlanga Mlangisto" class="founder-img" onerror="this.style.display='none'">
+          <h3 style="margin: 8px 0 4px;">Mlanga Mlangisto</h3>
+          <p style="color:#dd7e28; font-weight: 500;">Co-founder</p>
+          <p>Mlanga’s expertise in accounting, economics, and business studies turns complex subjects into practical knowledge. He co-founded Best In Class to uplift the community.</p>
         </div>
       </div>
       <div class="verse-mini" style="margin-top: 24px;">
-        <i class="fas fa-heart" style="color:#e68a2e;"></i> <strong>Our promise:</strong> small groups, individual attention, and a faith‑driven belief that every learner can excel. “Inspiring today, excelling tomorrow.”
+        <i class="fas fa-heart" style="color:#e68a2e;"></i> <strong>Our story:</strong> Thabo and Mlanga met at the University of Johannesburg. While tutoring fellow students, they saw a gap: many high school learners in Kagiso lacked affordable weekend support. Together, they built Best In Class – a place where <strong>confidence in education</strong> grows, and every learner is empowered to succeed.
       </div>
       <div style="margin-top: 36px; background: #Fbf5ea; border-radius: 28px; padding: 28px;">
         <h3>📌 Why we're different</h3>
         <ul style="margin-left: 24px; margin-top: 12px;">
-          <li>✔️ Founded by educators who live in the community</li>
+          <li>✔️ Founded by graduates who live in the community</li>
           <li>✔️ One affordable fee covers all subjects – no hidden costs</li>
           <li>✔️ Proven results: 90% of learners improve their marks</li>
           <li>✔️ Every class starts and ends with encouragement and purpose</li>
@@ -324,23 +343,23 @@
     </div>
   </div>
 
-  <!-- REGISTER NOW PAGE -->
+  <!-- ENROLL PAGE (formerly Register Now) -->
   <div id="register-page" class="page">
     <div class="container section-padding">
       <div style="background: linear-gradient(135deg, #fef3e4, white); border-radius: 48px; padding: 48px 32px; text-align: center;">
         <i class="fas fa-clipboard-list" style="font-size: 3rem; color:#D17E2C;"></i>
-        <h2 style="font-size: 2rem; margin: 16px 0 8px;">Registration is open</h2>
-        <p style="max-width: 650px; margin: 0 auto;">Start any weekend – no need to wait for a new term. Join the extra classes that deliver results.</p>
+        <h2 style="font-size: 2rem; margin: 16px 0 8px;">Enrollment is open</h2>
+        <p style="max-width: 650px; margin: 0 auto;">Start any weekend – no need to wait for a new term. Join the extra classes that deliver results and build confidence in education.</p>
         <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 32px 0;">
           <a href="tel:0697253138" class="btn-solid"><i class="fas fa-phone-alt"></i> 069 725 3138</a>
           <a href="tel:0738135240" class="btn-solid" style="background:#5a3e2b;"><i class="fas fa-phone-alt"></i> 073 813 5240</a>
-          <a href="https://wa.me/27697253138?text=Hello%20Best%20In%20Class!%20I%20want%20to%20register" class="btn-solid" style="background:#25D366;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="https://wa.me/27697253138?text=Hello%20Best%20In%20Class!%20I%20want%20to%20enroll" class="btn-solid" style="background:#25D366;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
         <div style="background: white; border-radius: 40px; padding: 28px; text-align: left;">
-          <p><i class="fas fa-check-circle" style="color:#2b7840;"></i> <strong>How to register:</strong></p>
+          <p><i class="fas fa-check-circle" style="color:#2b7840;"></i> <strong>How to enroll:</strong></p>
           <ul style="margin-left: 24px; margin-top: 12px;">
             <li>📍 Walk-in at Mathlasedi Primary School, Kagiso (Sat/Sun 9h00–15h30)</li>
-            <li>📞 Call or WhatsApp to pre‑register – we’ll guide you</li>
+            <li>📞 Call or WhatsApp to pre‑enroll – we’ll guide you</li>
             <li>💳 R250 registration + R300 monthly fee (covers all subjects)</li>
             <li>📅 Classes run every weekend – join anytime, catch up fast</li>
           </ul>
@@ -356,14 +375,12 @@
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px;">
       <div>
         <h3 style="color:#f3bc7c;">Best In Class Tutoring Services</h3>
-        <p>Founded by Thabo Chauke & Mlanga Mlangisto</p>
         <p>2026 Extra Classes • Grade 8–11</p>
         <p><i class="fas fa-map-marker-alt"></i> Mathlasedi Primary School, Kagiso</p>
       </div>
       <div>
         <p><i class="fas fa-phone-alt"></i> 069 725 3138 / 073 813 5240</p>
         <p><i class="fab fa-whatsapp"></i> WhatsApp: 069 725 3138</p>
-        <p><i class="fas fa-envelope"></i> hello@bestinclass.co.za</p>
         <p><i class="fas fa-clock"></i> Sat & Sun 9h00 – 15h30</p>
       </div>
     </div>
@@ -373,7 +390,7 @@
 </footer>
 
 <script>
-  // simple router: show active page, update URL hash
+  // simple router
   const pages = {
     home: 'home-page',
     about: 'about-page',
@@ -383,14 +400,12 @@
   };
 
   function showPage(pageId) {
-    // hide all pages
     Object.values(pages).forEach(id => {
       const el = document.getElementById(id);
       if (el) el.classList.remove('active-page');
     });
     const active = document.getElementById(pages[pageId]);
     if (active) active.classList.add('active-page');
-    // update URL hash without jumping
     history.pushState(null, '', '#' + pageId);
   }
 
@@ -401,31 +416,20 @@
     } else {
       showPage('home');
     }
-    // update active button style (optional)
+    // update active button style
     document.querySelectorAll('.nav-links button').forEach(btn => {
-      if (btn.getAttribute('data-page') === (hash || 'home')) {
+      const page = btn.getAttribute('data-page');
+      if (page === (hash || 'home')) {
         btn.style.color = '#dd8833';
-        if(btn.classList.contains('register-nav-btn')) btn.style.color = 'white';
+        if (btn.classList.contains('enroll-nav-btn')) btn.style.color = 'white';
       } else {
         btn.style.color = '';
-        if(btn.classList.contains('register-nav-btn')) btn.style.color = 'white';
+        if (btn.classList.contains('enroll-nav-btn')) btn.style.color = 'white';
       }
     });
   }
 
-  // attach event listeners to nav buttons
-  document.querySelectorAll('.nav-links button').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const page = btn.getAttribute('data-page');
-      if (page) {
-        showPage(page);
-        window.location.hash = page;
-      }
-    });
-  });
-
-  // also handle any button with data-page (like "Enroll today" button)
-  document.querySelectorAll('[data-page]').forEach(btn => {
+  document.querySelectorAll('.nav-links button, [data-page]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const page = btn.getAttribute('data-page');
       if (page) {
@@ -436,7 +440,7 @@
   });
 
   window.addEventListener('popstate', handleNavigation);
-  handleNavigation(); // initial load
+  handleNavigation();
 </script>
 </body>
 </html>
