@@ -17,26 +17,16 @@
       font-family: 'Inter', sans-serif;
       background: #fefaf5;
       color: #1f2e26;
-      /* extra spacing on edges */
-      padding: 0 16px;
+      padding: 0 20px; /* extra space on sides */
     }
 
     .container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 20px; /* increased from 28px on sides */
+      padding: 0 24px;
     }
 
-    /* for extra small screens */
-    @media (max-width: 640px) {
-      body {
-        padding: 0 8px;
-      }
-      .container {
-        padding: 0 16px;
-      }
-    }
-
+    /* make header full width despite body padding */
     .site-header {
       background: white;
       box-shadow: 0 2px 12px rgba(0,0,0,0.03);
@@ -46,14 +36,8 @@
       z-index: 100;
       background: rgba(255, 255, 245, 0.98);
       backdrop-filter: blur(4px);
-      margin: 0 -16px; /* offset body padding to keep header full width */
-      padding: 0 16px;
-    }
-    @media (max-width: 640px) {
-      .site-header {
-        margin: 0 -8px;
-        padding: 0 8px;
-      }
+      margin: 0 -20px;
+      padding: 0 20px;
     }
 
     .nav-wrapper {
@@ -103,18 +87,20 @@
       color: #2f4d3a;
       transition: 0.2s;
       font-family: inherit;
+      padding: 6px 12px;
     }
     .nav-links button:hover {
       color: #dd8833;
     }
+    /* ENROLL BUTTON - clearly visible next to Fees */
     .enroll-nav-btn {
-      background: #dd8833;
+      background: #dd8833 !important;
       color: white !important;
-      padding: 6px 20px;
+      padding: 6px 20px !important;
       border-radius: 60px;
     }
     .enroll-nav-btn:hover {
-      background: #bc6f25;
+      background: #bc6f25 !important;
     }
 
     .page {
@@ -180,11 +166,12 @@
       flex: 1;
       text-align: center;
     }
+    /* FIXED: focus on face, not legs */
     .founder-img {
       width: 160px;
       height: 160px;
       object-fit: cover;
-      object-position: top center; /* focus on face instead of legs */
+      object-position: top 20%; /* shifts focus upward */
       border-radius: 50%;
       margin-bottom: 16px;
       border: 3px solid #e0c8a8;
@@ -207,33 +194,19 @@
       color: #dfd7c6;
       padding: 40px 0 24px;
       margin-top: 40px;
-      margin-left: -16px;
-      margin-right: -16px;
-      padding-left: 16px;
-      padding-right: 16px;
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
-    @media (max-width: 640px) {
-      footer {
-        margin-left: -8px;
-        margin-right: -8px;
-        padding-left: 8px;
-        padding-right: 8px;
-      }
-    }
-    /* Hero with background image */
+    /* Hero background with 6.png */
     .hero-bg {
       background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('6.png');
       background-size: cover;
       background-position: center;
       color: white;
-      margin: 0 -16px;
-      padding: 0 16px;
-    }
-    @media (max-width: 640px) {
-      .hero-bg {
-        margin: 0 -8px;
-        padding: 0 8px;
-      }
+      margin: 0 -20px;
+      padding: 0 20px;
     }
     .hero-bg .hero-stats-card {
       background: rgba(255,255,255,0.96);
@@ -253,7 +226,7 @@
       border-left-color: #ffb347;
       color: white;
     }
-    /* Slider styles */
+    /* slider */
     .slider-container {
       position: relative;
       max-width: 100%;
@@ -307,6 +280,23 @@
       background: #e68a2e;
     }
     @media (max-width: 700px) {
+      body {
+        padding: 0 12px;
+      }
+      .site-header {
+        margin: 0 -12px;
+        padding: 0 12px;
+      }
+      .hero-bg {
+        margin: 0 -12px;
+        padding: 0 12px;
+      }
+      footer {
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
       .nav-wrapper {
         flex-direction: column;
         align-items: stretch;
@@ -375,7 +365,7 @@
         </div>
       </div>
     </section>
-    <!-- manual slider -->
+    <!-- slider -->
     <div class="container" style="margin-top: 20px; margin-bottom: 40px;">
       <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; color:#c56a1a;">Our learning community</h3>
       <div class="slider-container">
@@ -535,7 +525,6 @@
 </footer>
 
 <script>
-  // Router
   const pages = {
     home: 'home-page',
     about: 'about-page',
@@ -586,7 +575,7 @@
   window.addEventListener('popstate', handleNavigation);
   handleNavigation();
 
-  // Manual Slider Logic
+  // Slider logic
   const slider = document.getElementById('slider');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
@@ -622,12 +611,9 @@
 
   function resetAuto() {
     if (autoInterval) clearInterval(autoInterval);
-    autoInterval = setInterval(() => {
-      nextSlide();
-    }, 5000);
+    autoInterval = setInterval(nextSlide, 5000);
   }
 
-  // create dots
   images.forEach((_, idx) => {
     const dot = document.createElement('span');
     dot.classList.add('dot');
