@@ -155,12 +155,13 @@
       box-shadow: 0 6px 14px rgba(0,0,0,0.02);
       border: 1px solid #f0e2cf;
       flex: 1;
+      text-align: center;
     }
     .founder-img {
-      width: 120px;
-      height: 120px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
-      border-radius: 60px;
+      border-radius: 50%;
       margin-bottom: 16px;
       border: 3px solid #e0c8a8;
     }
@@ -189,6 +190,10 @@
       }
       .nav-links {
         justify-content: center;
+      }
+      .founder-img {
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
@@ -253,22 +258,20 @@
   <div id="about-page" class="page">
     <div class="container section-padding">
       <h2 class="page-title">About us</h2>
+      <!-- Founder images with only names -->
       <div class="grid-2">
         <div class="card">
           <img src="2.png" alt="Thabo Chauke" class="founder-img" onerror="this.style.display='none'">
-          <h3 style="margin: 8px 0 4px;">Thabo Chauke</h3>
-          <p style="color:#dd7e28; font-weight: 500;">Co-founder</p>
-          <p>Thabo’s passion for mathematics and science drives the academic structure at Best In Class. He believes that every learner can excel with the right support.</p>
+          <h3 style="margin-top: 8px;">Thabo Chauke</h3>
         </div>
         <div class="card">
           <img src="3.png" alt="Mlanga Mlangisto" class="founder-img" onerror="this.style.display='none'">
-          <h3 style="margin: 8px 0 4px;">Mlanga Mlangisto</h3>
-          <p style="color:#dd7e28; font-weight: 500;">Co-founder</p>
-          <p>Mlanga’s expertise in accounting, economics, and business studies turns complex subjects into practical knowledge. He co-founded Best In Class to uplift the community.</p>
+          <h3 style="margin-top: 8px;">Mlanga Mlangisto</h3>
         </div>
       </div>
+      <!-- Creative story (meeting at UJ, community need, confidence in education) -->
       <div class="verse-mini" style="margin-top: 24px;">
-        <i class="fas fa-heart" style="color:#e68a2e;"></i> <strong>Our story:</strong> Thabo and Mlanga met at the University of Johannesburg. While tutoring fellow students, they saw a gap: many high school learners in Kagiso lacked affordable weekend support. Together, they built Best In Class – a place where <strong>confidence in education</strong> grows, and every learner is empowered to succeed.
+        <i class="fas fa-heart" style="color:#e68a2e;"></i> <strong>Our story:</strong> Thabo and Mlanga met at the University of Johannesburg. While helping fellow students, they noticed a gap: many high school learners in Kagiso lacked affordable, quality weekend support. They dreamed of a place where <strong>confidence in education</strong> is built, not just grades. That dream became Best In Class.
       </div>
       <div style="margin-top: 36px; background: #Fbf5ea; border-radius: 28px; padding: 28px;">
         <h3>📌 Why we're different</h3>
@@ -276,7 +279,7 @@
           <li>✔️ Founded by graduates who live in the community</li>
           <li>✔️ One affordable fee covers all subjects – no hidden costs</li>
           <li>✔️ Proven results: 90% of learners improve their marks</li>
-          <li>✔️ Every class starts and ends with encouragement and purpose</li>
+          <li>✔️ Every class builds confidence and character</li>
         </ul>
       </div>
     </div>
@@ -343,7 +346,7 @@
     </div>
   </div>
 
-  <!-- ENROLL PAGE (formerly Register Now) -->
+  <!-- ENROLL PAGE -->
   <div id="register-page" class="page">
     <div class="container section-padding">
       <div style="background: linear-gradient(135deg, #fef3e4, white); border-radius: 48px; padding: 48px 32px; text-align: center;">
@@ -390,7 +393,6 @@
 </footer>
 
 <script>
-  // simple router
   const pages = {
     home: 'home-page',
     about: 'about-page',
@@ -416,7 +418,6 @@
     } else {
       showPage('home');
     }
-    // update active button style
     document.querySelectorAll('.nav-links button').forEach(btn => {
       const page = btn.getAttribute('data-page');
       if (page === (hash || 'home')) {
