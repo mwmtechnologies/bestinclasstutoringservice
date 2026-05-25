@@ -182,6 +182,31 @@
       padding: 40px 0 24px;
       margin-top: 40px;
     }
+    /* Hero with background image */
+    .hero-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('6.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    .hero-bg .hero-stats-card {
+      background: rgba(255,255,255,0.95);
+      color: #1f2e26;
+    }
+    .hero-bg .hero-text h1,
+    .hero-bg .hero-text p,
+    .hero-bg .hero-text .hero-badge {
+      color: white;
+    }
+    .hero-bg .hero-badge {
+      background: rgba(0,0,0,0.4);
+      color: #ffefd6;
+    }
+    .hero-bg .verse-mini {
+      background: rgba(0,0,0,0.3);
+      border-left-color: #ffb347;
+      color: white;
+    }
     /* Slider styles */
     .slider-container {
       position: relative;
@@ -275,24 +300,24 @@
 </header>
 
 <main>
-  <!-- HOME PAGE with manual slider -->
+  <!-- HOME PAGE with 6.png as background -->
   <div id="home-page" class="page active-page">
-    <section style="background: linear-gradient(115deg, #fff6e8, #fef0df);">
+    <section class="hero-bg">
       <div class="container section-padding">
         <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
-          <div style="flex: 1.2;">
-            <div style="background: #e8dcc8; display: inline-block; padding: 6px 18px; border-radius: 60px; font-size: 0.8rem; font-weight: 700; color:#8b5a2b;"><i class="fas fa-calendar-alt"></i> 2026 EXTRA CLASSES • REGISTRATION OPEN</div>
-            <h1 style="font-size: 3rem; font-weight: 800; margin: 24px 0 16px;">Unlock your <span style="color:#dd7e28;">full potential</span> with weekend mastery</h1>
+          <div class="hero-text" style="flex: 1.2;">
+            <div class="hero-badge" style="display: inline-block; padding: 6px 18px; border-radius: 60px; font-size: 0.8rem; font-weight: 700;"><i class="fas fa-calendar-alt"></i> 2026 EXTRA CLASSES • REGISTRATION OPEN</div>
+            <h1 style="font-size: 3rem; font-weight: 800; margin: 24px 0 16px;">Unlock your <span style="color:#ffd966;">full potential</span> with weekend mastery</h1>
             <p style="font-size: 1.1rem;">Grade 8 – 11 | Maths, Sciences, Accounting, Languages & more.</p>
             <div class="verse-mini" style="margin: 24px 0;">
-              <i class="fas fa-cross" style="margin-right: 12px; color:#C57F2E;"></i> “I can do all things through Christ who strengthens me.” – Philippians 4:13
+              <i class="fas fa-cross" style="margin-right: 12px;"></i> “I can do all things through Christ who strengthens me.” – Philippians 4:13
             </div>
             <div style="display: flex; gap: 18px; flex-wrap: wrap;">
               <button data-page="register" class="btn-solid"><i class="fas fa-pen-fancy"></i> Enroll today</button>
-              <a href="tel:0697253138" class="btn-solid" style="background:transparent; border:1.5px solid #236B3C; color:#236B3C;">Call us</a>
+              <a href="tel:0697253138" class="btn-solid" style="background:transparent; border:1.5px solid white; color:white;">Call us</a>
             </div>
           </div>
-          <div style="flex: 0.9; background: white; border-radius: 36px; padding: 28px; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.05);">
+          <div class="hero-stats-card" style="flex: 0.9; background: white; border-radius: 36px; padding: 28px; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);">
             <div style="font-size: 2.2rem; font-weight: 800; color:#e57c1c;">90%</div>
             <p style="font-weight: 700;">learners improved their marks</p>
             <hr style="margin: 16px 0;">
@@ -304,7 +329,7 @@
         </div>
       </div>
     </section>
-    <!-- manual slider with student group photos -->
+    <!-- manual slider with student group photos (4.png to 9.png) -->
     <div class="container" style="margin-top: 20px; margin-bottom: 40px;">
       <h3 style="font-size: 1.6rem; font-weight: 700; margin-bottom: 16px; color:#2c5a3a;">Our learning community</h3>
       <div class="slider-container">
@@ -459,6 +484,7 @@
     </div>
     <hr style="margin: 32px 0 20px; border-color: #4f6b56;">
     <p style="text-align: center;">© 2026 Best In Class Tutoring Services — “I can do all things through Christ who strengthens me.” Philippians 4:13</p>
+    <p style="text-align: center; margin-top: 12px;">Created By <a href="https://www.mwmtechnologies.co.za/" target="_blank" style="color:#f3bc7c; text-decoration: none;">MWM Technologies</a></p>
   </div>
 </footer>
 
