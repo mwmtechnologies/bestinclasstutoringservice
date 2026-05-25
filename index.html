@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Best In Class | Tutoring Services | Excellence in Education</title>
-  <!-- Google Fonts + Font Awesome 6 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Best In Class | Tutoring Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -17,28 +14,27 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #fefaf2;
-      color: #1c2e24;
-      scroll-behavior: smooth;
+      font-family: 'Inter', sans-serif;
+      background: #fefaf5;
+      color: #1f2e26;
     }
 
-    /* container */
+    /* header & navigation */
+    .site-header {
+      background: white;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+      border-bottom: 1px solid #efe3d2;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 245, 0.98);
+      backdrop-filter: blur(4px);
+    }
+
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 28px;
-    }
-
-    /* sticky header */
-    .site-header {
-      background: #ffffffef;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid #f1e5d0;
     }
 
     .nav-wrapper {
@@ -47,24 +43,21 @@
       align-items: center;
       padding: 18px 0;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 20px;
     }
 
     .logo h1 {
       font-size: 1.7rem;
       font-weight: 800;
-      letter-spacing: -0.4px;
-      background: linear-gradient(130deg, #236B3C, #C67A2E);
+      background: linear-gradient(130deg, #236B3C, #C57F2E);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
     }
     .logo span {
-      font-size: 0.75rem;
-      font-weight: 500;
+      font-size: 0.7rem;
       display: block;
-      color: #6c5a3e;
-      letter-spacing: 0.3px;
+      color: #7c684a;
     }
 
     .nav-links {
@@ -72,105 +65,62 @@
       gap: 28px;
       flex-wrap: wrap;
     }
-    .nav-links a {
-      text-decoration: none;
+    .nav-links button {
+      background: none;
+      border: none;
       font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
       color: #2f4d3a;
       transition: 0.2s;
-      font-size: 0.95rem;
+      font-family: inherit;
     }
-    .nav-links a:hover {
+    .nav-links button:hover {
       color: #dd8833;
     }
-    .register-nav {
+    .register-nav-btn {
       background: #236B3C;
       color: white !important;
       padding: 6px 20px;
       border-radius: 60px;
-      transition: 0.2s;
     }
-    .register-nav:hover {
+    .register-nav-btn:hover {
       background: #aa5b1c;
-      color: white !important;
     }
 
-    /* section styling */
-    .section {
-      padding: 80px 0 70px;
-      border-bottom: 1px solid #f0e7d8;
+    /* page container */
+    .page {
+      display: none;
+      animation: fade 0.2s ease;
     }
-    .section:last-of-type {
-      border-bottom: none;
+    .active-page {
+      display: block;
     }
-    .section-title {
-      font-size: 2.3rem;
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(8px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* reusable components */
+    .section-padding {
+      padding: 70px 0;
+    }
+    .page-title {
+      font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 40px;
-      position: relative;
-      display: inline-block;
-      letter-spacing: -0.3px;
+      margin-bottom: 32px;
       background: linear-gradient(125deg, #1f5437, #bc701c);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      bottom: -14px;
-      left: 0;
-      width: 65px;
-      height: 4px;
-      background: #E68A2E;
-      border-radius: 4px;
-    }
-
-    /* hero / home section */
-    .hero-home {
-      background: linear-gradient(115deg, #fff6e8 0%, #fef0df 100%);
-      border-bottom: 1px solid #ecdbbd;
-    }
-    .hero-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 48px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .hero-text {
-      flex: 1.2;
-    }
-    .hero-badge {
-      background: #e8dcc8;
       display: inline-block;
-      padding: 6px 18px;
-      border-radius: 60px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #8b5a2b;
-      margin-bottom: 24px;
     }
-    .hero-text h2 {
-      font-size: 3.2rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: #293f2e;
-    }
-    .hero-highlight {
-      color: #dd7e28;
-    }
-    .verse-card {
-      background: #fef5e6;
-      border-left: 5px solid #dc9e53;
-      padding: 14px 22px;
-      border-radius: 24px;
-      margin: 28px 0;
+    .verse-mini {
+      background: #fef2e2;
+      border-left: 4px solid #dc9e53;
+      padding: 12px 18px;
+      border-radius: 20px;
       font-style: italic;
-    }
-    .btn-group {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
     }
     .btn-solid {
       background: #236B3C;
@@ -179,79 +129,25 @@
       border-radius: 60px;
       font-weight: 700;
       text-decoration: none;
-      transition: 0.2s;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      border: none;
+      cursor: pointer;
     }
-    .btn-outline-light {
-      background: transparent;
-      border: 1.5px solid #236B3C;
-      color: #236B3C;
-      padding: 12px 28px;
-      border-radius: 60px;
-      font-weight: 700;
-      text-decoration: none;
-    }
-    .hero-stats {
-      flex: 0.9;
-      background: white;
-      border-radius: 36px;
-      padding: 28px;
-      box-shadow: 0 25px 35px -12px rgba(0,0,0,0.08);
-    }
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #e57c1c;
-    }
-
-    /* about cards */
-    .about-grid {
+    .grid-2 {
       display: flex;
       flex-wrap: wrap;
       gap: 32px;
-      margin-top: 20px;
+      margin: 32px 0;
     }
-    .about-card {
+    .card {
       background: white;
       border-radius: 28px;
-      padding: 32px 28px;
-      flex: 1;
+      padding: 28px;
       box-shadow: 0 6px 14px rgba(0,0,0,0.02);
-      border: 1px solid #f1e6d6;
-      transition: 0.25s;
-    }
-    .about-card i {
-      font-size: 2.4rem;
-      color: #dd7e28;
-      margin-bottom: 20px;
-    }
-    .mission-text {
-      margin-top: 24px;
-      background: #FBF5EA;
-      border-radius: 28px;
-      padding: 28px;
-    }
-
-    /* subjects grid */
-    .subjects-flex {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-    .subject-block {
-      background: white;
-      border-radius: 32px;
-      padding: 28px;
-      box-shadow: 0 12px 22px -10px rgba(0,0,0,0.05);
-      transition: 0.2s;
-    }
-    .grade-badge {
-      font-size: 1.7rem;
-      font-weight: 800;
-      color: #aa621f;
-      margin-bottom: 16px;
+      border: 1px solid #f0e2cf;
+      flex: 1;
     }
     .subject-tags {
       display: flex;
@@ -264,66 +160,14 @@
       padding: 6px 16px;
       border-radius: 40px;
       font-size: 0.8rem;
-      font-weight: 500;
-    }
-
-    /* fees + schedule row */
-    .double-card {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      margin: 20px 0;
-    }
-    .fee-card {
-      flex: 1;
-      background: white;
-      border-radius: 32px;
-      padding: 32px;
-      border: 1px solid #f0e2cf;
-    }
-    .price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #2c7840;
-      margin: 12px 0;
-    }
-    .register-now-section {
-      background: linear-gradient(135deg, #fef3e4, #ffffff);
-      border-radius: 48px;
-      padding: 48px 32px;
-      text-align: center;
-    }
-    .contact-buttons {
-      display: flex;
-      gap: 24px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 32px 0;
-    }
-    .whatsapp-btn {
-      background: #25D366;
-      padding: 12px 30px;
-      border-radius: 60px;
-      color: white;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
     }
     footer {
       background: #1d2b21;
       color: #dfd7c6;
-      padding: 44px 0 24px;
-      margin-top: 30px;
+      padding: 40px 0 24px;
+      margin-top: 40px;
     }
-    @media (max-width: 780px) {
-      .hero-text h2 {
-        font-size: 2.2rem;
-      }
-      .section {
-        padding: 55px 0;
-      }
+    @media (max-width: 700px) {
       .nav-wrapper {
         flex-direction: column;
         align-items: stretch;
@@ -331,15 +175,6 @@
       .nav-links {
         justify-content: center;
       }
-    }
-    .icon-ring {
-      background: #ecddc3;
-      width: 48px;
-      height: 48px;
-      border-radius: 30px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
     }
   </style>
 </head>
@@ -352,164 +187,168 @@
       <span>Tutoring Services • 2026</span>
     </div>
     <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#fees">Fees</a>
-      <a href="#register-now" class="register-nav">Register Now</a>
+      <button data-page="home">Home</button>
+      <button data-page="about">About</button>
+      <button data-page="subjects">Subjects</button>
+      <button data-page="fees">Fees</button>
+      <button data-page="register" class="register-nav-btn">Register Now</button>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- HOME Section -->
-  <section id="home" class="hero-home">
-    <div class="container section" style="padding-top: 60px; padding-bottom: 60px;">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <div class="hero-badge"><i class="fas fa-calendar-alt"></i> 2026 EXTRA CLASSES • REGISTRATION OPEN</div>
-          <h2>Unlock your <span class="hero-highlight">full potential</span> with weekend mastery</h2>
-          <p style="font-size: 1.1rem; margin: 20px 0; color: #3a5a48;">Grade 8 – 11 | Mathematics, Sciences, Accounting, Languages & more.</p>
-          <div class="verse-card">
-            <i class="fas fa-cross" style="margin-right: 12px; color:#C57F2E;"></i> 
-            “I can do all things through Christ who strengthens me.” – Philippians 4:13
+  <!-- HOME PAGE -->
+  <div id="home-page" class="page active-page">
+    <section style="background: linear-gradient(115deg, #fff6e8, #fef0df);">
+      <div class="container section-padding">
+        <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+          <div style="flex: 1.2;">
+            <div style="background: #e8dcc8; display: inline-block; padding: 6px 18px; border-radius: 60px; font-size: 0.8rem; font-weight: 700; color:#8b5a2b;"><i class="fas fa-calendar-alt"></i> 2026 EXTRA CLASSES • REGISTRATION OPEN</div>
+            <h1 style="font-size: 3rem; font-weight: 800; margin: 24px 0 16px;">Unlock your <span style="color:#dd7e28;">full potential</span> with weekend mastery</h1>
+            <p style="font-size: 1.1rem;">Grade 8 – 11 | Maths, Sciences, Accounting, Languages & more.</p>
+            <div class="verse-mini" style="margin: 24px 0;">
+              <i class="fas fa-cross" style="margin-right: 12px; color:#C57F2E;"></i> “I can do all things through Christ who strengthens me.” – Philippians 4:13
+            </div>
+            <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+              <button data-page="register" class="btn-solid"><i class="fas fa-pen-fancy"></i> Enroll today</button>
+              <a href="tel:0697253138" class="btn-solid" style="background:transparent; border:1.5px solid #236B3C; color:#236B3C;">Call us</a>
+            </div>
           </div>
-          <div class="btn-group">
-            <a href="#register-now" class="btn-solid"><i class="fas fa-pen-fancy"></i> Enroll today</a>
-            <a href="tel:0697253138" class="btn-outline-light"><i class="fas fa-phone-alt"></i> Call us</a>
+          <div style="flex: 0.9; background: white; border-radius: 36px; padding: 28px; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.05);">
+            <div style="font-size: 2.2rem; font-weight: 800; color:#e57c1c;">90%</div>
+            <p style="font-weight: 700;">learners improved their marks</p>
+            <hr style="margin: 16px 0;">
+            <div><i class="fas fa-clock"></i> Sat & Sun 9h00 – 15h30</div>
+            <div style="margin-top: 12px;"><i class="fas fa-location-dot"></i> Mathlasedi Primary School, Kagiso</div>
+            <div style="margin-top: 12px;"><i class="fas fa-door-open"></i> Walk-in registrations every weekend</div>
+            <div style="margin-top: 20px; font-size: 1.6rem; font-weight: 800; color:#2c7840;">R300 <span style="font-size: 0.9rem;">covers ALL subjects</span></div>
           </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-number">90%</div>
-          <p style="font-weight: 700;">learners improved their marks</p>
-          <hr style="margin: 18px 0; opacity: 0.3;">
-          <div><i class="fas fa-chalkboard-user" style="color:#e68a2e;"></i> <strong>Sat & Sun</strong> 9:00 – 15:30</div>
-          <div style="margin-top: 12px;"><i class="fas fa-location-dot"></i> @Mathlasedi Primary School</div>
-          <div style="margin-top: 12px;"><i class="fas fa-door-open"></i> Walk-in registrations every weekend</div>
-          <div class="stat-number" style="font-size: 1.5rem; margin-top: 20px;">R300<span style="font-size: 0.9rem; font-weight: normal;"> covers ALL subjects</span></div>
+      </div>
+    </section>
+    <div class="container" style="padding: 40px 28px; text-align: center;">
+      <p style="font-size: 1.1rem;"><i class="fas fa-chalkboard-user"></i> Weekend classes for Grades 8-11 • Register now – spaces available</p>
+    </div>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="about-page" class="page">
+    <div class="container section-padding">
+      <h2 class="page-title">About us</h2>
+      <div class="grid-2">
+        <div class="card">
+          <i class="fas fa-handshake" style="font-size: 2rem; color:#dd7e28;"></i>
+          <h3 style="margin: 16px 0 8px;">Thabo Chauke & Mlanga Mlangisto</h3>
+          <p>Founders of Best In Class Tutoring Services</p>
+          <p style="margin-top: 16px;">Their paths crossed at the University of Johannesburg, where a shared passion for education and community upliftment brought them together. While tutoring fellow students, they noticed a gap: many high school learners in Kagiso and surrounding areas lacked affordable, quality weekend support.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-lightbulb" style="font-size: 2rem; color:#dd7e28;"></i>
+          <h3 style="margin: 16px 0 8px;">A vision born from need</h3>
+          <p>Thabo and Mlanga decided to turn their after‑hours help into a structured programme. They saw how a few hours of focused teaching every Saturday and Sunday could transform grades and confidence. In 2026, Best In Class was born – not as a business, but as a mission.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ABOUT Section (no UJ references, only founders + mission) -->
-  <section id="about" class="container section">
-    <h2 class="section-title">About us</h2>
-    <div class="about-grid">
-      <div class="about-card">
-        <i class="fas fa-chalkboard-user"></i>
-        <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Thabo Chauke</h3>
-        <p style="font-weight: 500; color: #d17e2c;">Co-founder & Head of Academics</p>
-        <p style="margin-top: 16px;">With years of experience in mathematics and science instruction, Thabo believes every learner can excel with the right guidance. His structured methods have transformed struggling students into confident achievers.</p>
+      <div class="verse-mini" style="margin-top: 24px;">
+        <i class="fas fa-heart" style="color:#e68a2e;"></i> <strong>Our promise:</strong> small groups, individual attention, and a faith‑driven belief that every learner can excel. “Inspiring today, excelling tomorrow.”
       </div>
-      <div class="about-card">
-        <i class="fas fa-calculator"></i>
-        <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Mlanga Mlangisto</h3>
-        <p style="font-weight: 500; color: #d17e2c;">Co-founder & Director</p>
-        <p style="margin-top: 16px;">Mlanga’s passion for accounting, business studies and economics drives results. He brings real-world insight into every lesson, making complex subjects practical and accessible.</p>
-      </div>
-    </div>
-    <div class="mission-text">
-      <i class="fas fa-hand-sparkles" style="font-size: 1.8rem; color: #d17e2c;"></i>
-      <h3 style="margin: 12px 0 8px;">Our mission: Inspiring today, excelling tomorrow</h3>
-      <p>Best In Class was founded to bridge educational gaps and empower learners across all grades. We don’t just teach — we mentor, motivate, and nurture excellence through faith, discipline, and innovative methods. Every weekend we create a safe, focused environment where students gain confidence, master subjects, and outperform their own expectations.</p>
-      <div style="margin-top: 18px; background: #e8ddcd; border-radius: 60px; padding: 10px 18px; display: inline-block;"><i class="fas fa-chart-line"></i> 90% improvement track record • Individual attention • Small groups</div>
-    </div>
-  </section>
-
-  <!-- SUBJECTS Section -->
-  <section id="subjects" class="container section">
-    <h2 class="section-title">📖 What we offer</h2>
-    <div class="subjects-flex">
-      <div class="subject-block">
-        <div class="grade-badge"><i class="fas fa-layer-group"></i> GRADES 8–9</div>
-        <p style="margin: 10px 0 12px; font-weight: 500;">Build a rock-solid foundation for senior phase</p>
-        <div class="subject-tags">
-          <span class="subject-tag">Mathematics</span>
-          <span class="subject-tag">Natural Science</span>
-          <span class="subject-tag">English</span>
-          <span class="subject-tag">EMS</span>
-          <span class="subject-tag">Afrikaans</span>
-        </div>
-      </div>
-      <div class="subject-block">
-        <div class="grade-badge"><i class="fas fa-rocket"></i> GRADES 10–11</div>
-        <p style="margin: 10px 0 12px; font-weight: 500;">FET phase — master your examinable subjects</p>
-        <div class="subject-tags" style="gap: 8px;">
-          <span class="subject-tag">Mathematics</span><span class="subject-tag">Maths Lit</span>
-          <span class="subject-tag">Physical Science</span><span class="subject-tag">Accounting</span>
-          <span class="subject-tag">Life Sciences</span><span class="subject-tag">Economics</span>
-          <span class="subject-tag">Geography</span><span class="subject-tag">Business Studies</span>
-          <span class="subject-tag">English FAL & HL</span><span class="subject-tag">C.A.T</span>
-          <span class="subject-tag">History</span><span class="subject-tag">Tourism</span>
-          <span class="subject-tag">EGD</span>
-        </div>
-        <p style="margin-top: 16px; font-size: 0.8rem;"><i class="fas fa-check-circle" style="color:#2b7a3e;"></i> One fee, all subjects — unlimited support</p>
-      </div>
-    </div>
-    <!-- extra achievements / no term references -->
-    <div style="background: #fdf4e6; margin-top: 44px; border-radius: 32px; padding: 28px 24px;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; text-align: center;">
-        <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">90%</span><br>improved marks</div>
-        <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">↑ 2 grades</span><br>average to top performers</div>
-        <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">✔️ </span><br>confident in Maths & Science</div>
-        <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">🏆 </span><br>strong exam foundation</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEES Section (including schedule) -->
-  <section id="fees" class="container section">
-    <h2 class="section-title">💰 Simple & transparent fees</h2>
-    <div class="double-card">
-      <div class="fee-card">
-        <i class="fas fa-file-invoice" style="font-size: 2rem; color: #236B3C;"></i>
-        <h3 style="margin: 16px 0 8px;">Registration Fee</h3>
-        <div class="price">R250</div>
-        <p>One-time payment, secures your spot for the academic year.</p>
-        <p style="margin-top: 12px;"><i class="fas fa-check-circle"></i> Includes learning materials & assessment tracking</p>
-      </div>
-      <div class="fee-card">
-        <i class="fas fa-calendar-alt" style="font-size: 2rem; color: #236B3C;"></i>
-        <h3 style="margin: 16px 0 8px;">Monthly School Fee</h3>
-        <div class="price">R300</div>
-        <p><strong>Covers ALL subjects</strong> – Mathematics, Sciences, Accounting, Languages, and more.</p>
-        <p>No hidden costs, unlimited weekend classes.</p>
-        <div class="subject-tag" style="background:#e3d9cb; margin-top: 12px;">Sat & Sun • 9h00 – 15h30</div>
-      </div>
-    </div>
-    <div style="background: #E9F0E4; border-radius: 28px; padding: 22px 28px; margin-top: 20px;">
-      <i class="fas fa-school"></i> <strong>Venue:</strong> @Mathlasedi Primary School (weekends only) <br>
-      <i class="fas fa-clock"></i> <strong>Schedule:</strong> Saturdays & Sundays 9:00 – 15:30 | Walk-in registrations open every class day.
-    </div>
-  </section>
-
-  <!-- REGISTER NOW Section (fully open registration) -->
-  <section id="register-now" class="container section">
-    <div class="register-now-section">
-      <i class="fas fa-clipboard-list" style="font-size: 3rem; color:#D17E2C;"></i>
-      <h2 style="font-size: 2rem; margin: 16px 0 8px;">Registration is open</h2>
-      <p style="max-width: 650px; margin: 0 auto;">Join the extra classes that turn effort into excellence. Secure your seat today — walk-ins are welcome every weekend at the venue.</p>
-      <div class="contact-buttons">
-        <a href="tel:0697253138" class="btn-solid"><i class="fas fa-phone-alt"></i> Call 069 725 3138</a>
-        <a href="tel:0738135240" class="btn-solid" style="background:#5a3e2b;"><i class="fas fa-phone-alt"></i> 073 813 5240</a>
-        <a href="https://wa.me/27697253138?text=Hello%20Best%20In%20Class!%20I%20want%20to%20register%20for%20extra%20classes" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp registration</a>
-      </div>
-      <div style="background: white; border-radius: 48px; padding: 22px; margin-top: 20px; text-align: left;">
-        <p><i class="fas fa-check-circle" style="color:#2b7840;"></i> <strong>How to register:</strong></p>
-        <ul style="margin-left: 24px; margin-top: 8px;">
-          <li>📍 Walk-in registrations at Mathlasedi Primary School (Sat/Sun 9h00–15h30)</li>
-          <li>📞 Call or WhatsApp us to pre-register and pay via instant EFT/cash on arrival</li>
-          <li>💳 Registration fee R250 + monthly fee R300 covers all subjects (no subject limitations)</li>
-          <li>📅 Classes run every weekend — join anytime, catch up with ease</li>
+      <div style="margin-top: 36px; background: #Fbf5ea; border-radius: 28px; padding: 28px;">
+        <h3>📌 Why we're different</h3>
+        <ul style="margin-left: 24px; margin-top: 12px;">
+          <li>✔️ Founded by educators who live in the community</li>
+          <li>✔️ One affordable fee covers all subjects – no hidden costs</li>
+          <li>✔️ Proven results: 90% of learners improve their marks</li>
+          <li>✔️ Every class starts and ends with encouragement and purpose</li>
         </ul>
-        <div style="margin-top: 18px; background:#FFF2E2; border-radius: 32px; padding: 14px;">
-          <i class="fas fa-calendar-week"></i> <strong>Important:</strong> Extra classes started on 31st January 2026 — but registration remains open. New learners are integrated from the first weekend.
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBJECTS PAGE -->
+  <div id="subjects-page" class="page">
+    <div class="container section-padding">
+      <h2 class="page-title">📚 What we teach</h2>
+      <div class="grid-2">
+        <div class="card">
+          <div style="font-size: 1.6rem; font-weight: 800; color:#aa621f;">GRADES 8 – 9</div>
+          <p style="margin: 12px 0;">Senior Phase foundation</p>
+          <div class="subject-tags">
+            <span class="subject-tag">Mathematics</span><span class="subject-tag">Natural Science</span>
+            <span class="subject-tag">English</span><span class="subject-tag">EMS</span><span class="subject-tag">Afrikaans</span>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size: 1.6rem; font-weight: 800; color:#aa621f;">GRADES 10 – 11</div>
+          <p style="margin: 12px 0;">FET Phase – exam ready</p>
+          <div class="subject-tags">
+            <span class="subject-tag">Mathematics</span><span class="subject-tag">Maths Lit</span>
+            <span class="subject-tag">Physical Science</span><span class="subject-tag">Accounting</span>
+            <span class="subject-tag">Life Sciences</span><span class="subject-tag">Economics</span>
+            <span class="subject-tag">Geography</span><span class="subject-tag">Business Studies</span>
+            <span class="subject-tag">English FAL & HL</span><span class="subject-tag">C.A.T</span>
+            <span class="subject-tag">History</span><span class="subject-tag">Tourism</span><span class="subject-tag">EGD</span>
+          </div>
         </div>
       </div>
-      <p style="margin-top: 24px;"><i class="fas fa-star-of-life"></i> “Inspiring today, excelling tomorrow” — join the Best In Class family.</p>
+      <div style="background: #fdf4e6; border-radius: 32px; padding: 28px; margin-top: 32px;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; text-align: center;">
+          <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">90%</span><br>improved marks</div>
+          <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">📈</span><br>average → top performers</div>
+          <div><span style="font-size: 2rem; font-weight: 800; color:#e07a2c;">🧠</span><br>confidence in Maths & Science</div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- FEES PAGE -->
+  <div id="fees-page" class="page">
+    <div class="container section-padding">
+      <h2 class="page-title">💰 Simple & transparent fees</h2>
+      <div class="grid-2">
+        <div class="card">
+          <i class="fas fa-file-invoice" style="font-size: 2rem; color:#236B3C;"></i>
+          <h3 style="margin: 16px 0 8px;">Registration Fee</h3>
+          <div style="font-size: 2.5rem; font-weight: 800; color:#2c7840;">R250</div>
+          <p>One‑time payment, secures your spot for the year.</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-calendar-alt" style="font-size: 2rem; color:#236B3C;"></i>
+          <h3 style="margin: 16px 0 8px;">Monthly School Fee</h3>
+          <div style="font-size: 2.5rem; font-weight: 800; color:#2c7840;">R300</div>
+          <p>Covers <strong>ALL subjects</strong> – unlimited weekend access.</p>
+        </div>
+      </div>
+      <div style="background: #E9F0E4; border-radius: 32px; padding: 24px;">
+        <p><i class="fas fa-school"></i> <strong>Venue:</strong> Mathlasedi Primary School, Kagiso (Saturdays & Sundays 9h00–15h30)</p>
+        <p style="margin-top: 12px;"><i class="fas fa-walking"></i> Walk-in registrations accepted every class day.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGISTER NOW PAGE -->
+  <div id="register-page" class="page">
+    <div class="container section-padding">
+      <div style="background: linear-gradient(135deg, #fef3e4, white); border-radius: 48px; padding: 48px 32px; text-align: center;">
+        <i class="fas fa-clipboard-list" style="font-size: 3rem; color:#D17E2C;"></i>
+        <h2 style="font-size: 2rem; margin: 16px 0 8px;">Registration is open</h2>
+        <p style="max-width: 650px; margin: 0 auto;">Start any weekend – no need to wait for a new term. Join the extra classes that deliver results.</p>
+        <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin: 32px 0;">
+          <a href="tel:0697253138" class="btn-solid"><i class="fas fa-phone-alt"></i> 069 725 3138</a>
+          <a href="tel:0738135240" class="btn-solid" style="background:#5a3e2b;"><i class="fas fa-phone-alt"></i> 073 813 5240</a>
+          <a href="https://wa.me/27697253138?text=Hello%20Best%20In%20Class!%20I%20want%20to%20register" class="btn-solid" style="background:#25D366;" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+        <div style="background: white; border-radius: 40px; padding: 28px; text-align: left;">
+          <p><i class="fas fa-check-circle" style="color:#2b7840;"></i> <strong>How to register:</strong></p>
+          <ul style="margin-left: 24px; margin-top: 12px;">
+            <li>📍 Walk-in at Mathlasedi Primary School, Kagiso (Sat/Sun 9h00–15h30)</li>
+            <li>📞 Call or WhatsApp to pre‑register – we’ll guide you</li>
+            <li>💳 R250 registration + R300 monthly fee (covers all subjects)</li>
+            <li>📅 Classes run every weekend – join anytime, catch up fast</li>
+          </ul>
+        </div>
+        <p style="margin-top: 24px;"><i class="fas fa-star-of-life"></i> “Inspiring today, excelling tomorrow” – secure your seat now.</p>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -518,35 +357,86 @@
       <div>
         <h3 style="color:#f3bc7c;">Best In Class Tutoring Services</h3>
         <p>Founded by Thabo Chauke & Mlanga Mlangisto</p>
-        <p>2026 Extra Classes • Grade 8 – 11</p>
-        <p><i class="fas fa-map-marker-alt"></i> @Mathlasedi Primary School (weekends)</p>
+        <p>2026 Extra Classes • Grade 8–11</p>
+        <p><i class="fas fa-map-marker-alt"></i> Mathlasedi Primary School, Kagiso</p>
       </div>
       <div>
         <p><i class="fas fa-phone-alt"></i> 069 725 3138 / 073 813 5240</p>
         <p><i class="fab fa-whatsapp"></i> WhatsApp: 069 725 3138</p>
-        <p><i class="fas fa-envelope"></i> hello@bestinclass.co.za (inquiries)</p>
-        <div><i class="fas fa-clock"></i> Sat & Sun 9h00 – 15h30</div>
+        <p><i class="fas fa-envelope"></i> hello@bestinclass.co.za</p>
+        <p><i class="fas fa-clock"></i> Sat & Sun 9h00 – 15h30</p>
       </div>
     </div>
     <hr style="margin: 32px 0 20px; border-color: #4f6b56;">
-    <p style="text-align: center; font-size: 0.8rem;">© 2026 Best In Class Tutoring Services — Empowering learners through faith, knowledge & dedication. | “I can do all things through Christ who strengthens me.”</p>
+    <p style="text-align: center;">© 2026 Best In Class Tutoring Services — “I can do all things through Christ who strengthens me.” Philippians 4:13</p>
   </div>
 </footer>
 
-<!-- optional smooth scroll JS for better multi-section linking -->
 <script>
-  document.querySelectorAll('.nav-links a, .btn-solid[href^="#"], .btn-outline-light[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId && targetId !== '#' && targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+  // simple router: show active page, update URL hash
+  const pages = {
+    home: 'home-page',
+    about: 'about-page',
+    subjects: 'subjects-page',
+    fees: 'fees-page',
+    register: 'register-page'
+  };
+
+  function showPage(pageId) {
+    // hide all pages
+    Object.values(pages).forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('active-page');
+    });
+    const active = document.getElementById(pages[pageId]);
+    if (active) active.classList.add('active-page');
+    // update URL hash without jumping
+    history.pushState(null, '', '#' + pageId);
+  }
+
+  function handleNavigation() {
+    let hash = window.location.hash.slice(1);
+    if (hash && pages[hash]) {
+      showPage(hash);
+    } else {
+      showPage('home');
+    }
+    // update active button style (optional)
+    document.querySelectorAll('.nav-links button').forEach(btn => {
+      if (btn.getAttribute('data-page') === (hash || 'home')) {
+        btn.style.color = '#dd8833';
+        if(btn.classList.contains('register-nav-btn')) btn.style.color = 'white';
+      } else {
+        btn.style.color = '';
+        if(btn.classList.contains('register-nav-btn')) btn.style.color = 'white';
+      }
+    });
+  }
+
+  // attach event listeners to nav buttons
+  document.querySelectorAll('.nav-links button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const page = btn.getAttribute('data-page');
+      if (page) {
+        showPage(page);
+        window.location.hash = page;
       }
     });
   });
+
+  // also handle any button with data-page (like "Enroll today" button)
+  document.querySelectorAll('[data-page]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const page = btn.getAttribute('data-page');
+      if (page) {
+        showPage(page);
+        window.location.hash = page;
+      }
+    });
+  });
+
+  window.addEventListener('popstate', handleNavigation);
+  handleNavigation(); // initial load
 </script>
 </body>
 </html>
